@@ -1078,13 +1078,14 @@
 	</record>
 </Common>
   <APS>
-      <record index="01" describe="以时间为基础的通用记录" type="151" auto="自动">
+  <record index="01" describe="以时间为基础的通用记录" type="151" auto="自动">
 		<item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
 		<item index="02" describe="侧钻/井眼号" long-mnemonic="STKNO" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
 		<item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
 		<item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
 		<item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
 		<item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+    <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
 		<item index="08" describe="钻头深度（测量）" long-mnemonic="DEPTBITM" short-mnemonic="DBTM"  key-mnemonic="BITDEPTH" symbol="F" length="4" metric="M" british="F"/>
 		<item index="10" describe="井眼深度（测量）" long-mnemonic="DEPTMEAS" short-mnemonic="DMEA" key-mnemonic="DEPTH" symbol="F" length="4" metric="M" british="F"/>
 		<item index="12" describe="游车位置" long-mnemonic="BLKPOS" short-mnemonic="BPOS" symbol="F" length="4" metric="M" british="F"/>
@@ -1148,65 +1149,85 @@
 		<item index="50" describe="〈备用４〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="F" length="4" metric="-" british="-"/>
 	</record>
 	<record index="51" describe="APS常规记录(WPR)" type="175" auto="手动和自动">
-	      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
-		<item index="02" describe="侧钻/井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNU" symbol="S" length="2" metric="-" british="-"/>
-		<item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
-		<item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
-		<item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
-		<item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
-		<item index="12" describe="" long-mnemonic="PASSNUMBER" short-mnemonic="PASSNUM" symbol="" length="" metric="" british=""/>
-		<item index="13" describe="" long-mnemonic="WPRSENSORDEPTH" short-mnemonic="DEPTWPR" symbol="" length="" metric="" british=""/>
-		<item index="15" describe="" long-mnemonic="ACCEPTED" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="16" describe="" long-mnemonic="WPRSENSORTOOLSTATUS" short-mnemonic="RTS" symbol="" length="" metric="" british=""/>
-		<item index="17" describe="" long-mnemonic="RPCECHX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="18" describe="" long-mnemonic="RPCECSHX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="19" describe="" long-mnemonic="RPCECLX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="20" describe="" long-mnemonic="RPCECSLX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="21" describe="" long-mnemonic="RACECHX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="22" describe="" long-mnemonic="RACECSHX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="23" describe="" long-mnemonic="RACECLX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="24" describe="" long-mnemonic="RACECSLX" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="25" describe="" long-mnemonic="WPRTEMPERATURE" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="57" describe="" long-mnemonic="RPCECHXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="58" describe="" long-mnemonic="RPCECSHXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="59" describe="" long-mnemonic="RPCECLXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="60" describe="" long-mnemonic="RPCECSLXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="61" describe="" long-mnemonic="RACECHXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="62" describe="" long-mnemonic="RACECSHXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="63" describe="" long-mnemonic="RACECLXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="64" describe="" long-mnemonic="RACECSLXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="65" describe="" long-mnemonic="TRSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
+	        <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
+			<item index="02" describe="侧钻/井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNU" symbol="S" length="2" metric="-" british="-"/>
+			<item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+			<item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+			<item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+			<item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+			<item index="12" describe="通过次数" long-mnemonic="PASSNUMBER" short-mnemonic="PASSNUM" symbol="A" length="15" metric="" british=""/>
+			<item index="13" describe="电磁波电阻率深度" long-mnemonic="WPRSENSORDEPTH" short-mnemonic="DEPTWPR" symbol="A" length="15" metric="" british=""/>
+			<item index="15" describe="接收位" long-mnemonic="ACCEPTED" short-mnemonic="F15" symbol="A" length="15" metric="" british=""/>
+			<item index="16" describe="电磁波电阻率仪器状态" long-mnemonic="WPRSENSORTOOLSTATUS" short-mnemonic="RTS" symbol="A" length="15" metric="" british=""/>
+			<item index="17" describe="2MHz长源距电阻率" long-mnemonic="RPCECHX" short-mnemonic="RPCHX" symbol="F" length="4" metric="" british=""/>
+			<item index="18" describe="2MHz短源距电阻率" long-mnemonic="RPCECSHX" short-mnemonic="RPCSHX" symbol="F" length="4" metric="" british=""/>
+			<item index="19" describe="400KHz长源距电阻率" long-mnemonic="RPCECLX" short-mnemonic="RPCLX" symbol="F" length="4" metric="" british=""/>
+			<item index="20" describe="400KHz短源距电阻率" long-mnemonic="RPCECSLX" short-mnemonic="RPCSLX" symbol="F" length="4" metric="" british=""/>
+			<item index="21" describe="2MHz长源距相位电阻率" long-mnemonic="RACECHX" short-mnemonic="RACHX" symbol="F" length="4" metric="" british=""/>
+			<item index="22" describe="2MHz短源距相位电阻率" long-mnemonic="RACECSHX" short-mnemonic="RACSHX" symbol="F" length="4" metric="" british=""/>
+			<item index="23" describe="400KHz长源距相位电阻率" long-mnemonic="RACECLX" short-mnemonic="RACLX" symbol="F" length="4" metric="" british=""/>
+			<item index="24" describe="400KHz短源距相位电阻率" long-mnemonic="RACECSLX" short-mnemonic="RACSLX" symbol="F" length="4" metric="" british=""/>
+			<item index="25" describe="温度" long-mnemonic="WPRTEMPERATURE" short-mnemonic="WPRTEMP" symbol="F" length="4" metric="" british=""/>
+			<item index="57" describe="2MHz长源距电阻率状态" long-mnemonic="RPCECHXSTATUS" short-mnemonic="F57" symbol="A" length="15" metric="" british=""/>
+			<item index="58" describe="2MHz短源距电阻率状态" long-mnemonic="RPCECSHXSTATUS" short-mnemonic="F58" symbol="A" length="15" metric="" british=""/>
+			<item index="59" describe="400KHz长源距电阻率状态" long-mnemonic="RPCECLXSTATUS" short-mnemonic="F59" symbol="A" length="15" metric="" british=""/>
+			<item index="60" describe="400KHz短源距电阻率状态" long-mnemonic="RPCECSLXSTATUS" short-mnemonic="F60" symbol="A" length="15" metric="" british=""/>
+			<item index="61" describe="2MHz长源距相位电阻率状态" long-mnemonic="RACECHXSTATUS" short-mnemonic="F61" symbol="A" length="15" metric="" british=""/>
+			<item index="62" describe="2MHz短源距相位电阻率状态" long-mnemonic="RACECSHXSTATUS" short-mnemonic="F62" symbol="A" length="15" metric="" british=""/>
+			<item index="63" describe="400KHz长源距相位电阻率状态" long-mnemonic="RACECLXSTATUS" short-mnemonic="F63" symbol="A" length="15" metric="" british=""/>
+			<item index="64" describe="400KHz短源距相位电阻率状态" long-mnemonic="RACECSLXSTATUS" short-mnemonic="F64" symbol="A" length="15" metric="" british=""/>
+			<item index="65" describe="状态" long-mnemonic="TRSTATUS" short-mnemonic="F65" symbol="A" length="15" metric="" british=""/>
 	</record>
 	<record index="55" describe="APS常规记录(PWD)" type="175" auto="手动和自动">
-	      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
-		<item index="02" describe="侧钻/井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNU" symbol="S" length="2" metric="-" british="-"/>
-		<item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
-		<item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
-		<item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
-		<item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
-		<item index="12" describe="" long-mnemonic="PASSNUMBER" short-mnemonic="PASSNUM" symbol="" length="" metric="" british=""/>
-		<item index="13" describe="" long-mnemonic="PWDSENSORDEPTH" short-mnemonic="DEPTWPR" symbol="" length="" metric="" british=""/>
-		<item index="15" describe="" long-mnemonic="ACCEPTED" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="16" describe="" long-mnemonic="ANNNULARPRESSURE" short-mnemonic="PANNX" symbol="" length="" metric="" british=""/>
-		<item index="17" describe="" long-mnemonic="MINIMUMANNULARPRESSURE" short-mnemonic="PMNANNX" symbol="" length="" metric="" british=""/>
-		<item index="18" describe="" long-mnemonic="MAXIMUMANNULARPRESSURE" short-mnemonic="PMXANNX" symbol="" length="" metric="" british=""/>
-		<item index="19" describe="" long-mnemonic="BOREPRESSURE" short-mnemonic="PBORX" symbol="" length="" metric="" british=""/>
-		<item index="20" describe="" long-mnemonic="MINIMUMBOREPRESSURE" short-mnemonic="PMNBORX" symbol="" length="" metric="" british=""/>
-		<item index="21" describe="" long-mnemonic="MAXIMUMBOREPRESSURE" short-mnemonic="PMXBORX" symbol="" length="" metric="" british=""/>
-		<item index="22" describe="" long-mnemonic="ANNULARTEMPERATURE" short-mnemonic="TANN" symbol="" length="" metric="" british=""/>
-		<item index="23" describe="" long-mnemonic="BORETEMPERATURE" short-mnemonic="TBOR" symbol="" length="" metric="" british=""/>
-		<item index="24" describe="" long-mnemonic="EQUIVALENTMUDWEIGHT" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="56" describe="" long-mnemonic="PANNXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="57" describe="" long-mnemonic="PMNANNXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="58" describe="" long-mnemonic="PMXANNXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="59" describe="" long-mnemonic="PBORXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="60" describe="" long-mnemonic="PMNBORXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="61" describe="" long-mnemonic="PMXBORXSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="62" describe="" long-mnemonic="TANNSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="63" describe="" long-mnemonic="TBORSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-		<item index="64" describe="" long-mnemonic="EMWSTATUS" short-mnemonic="" symbol="" length="" metric="" british=""/>
-	</record>
-</APS>
+	        <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
+			<item index="02" describe="侧钻/井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNU" symbol="S" length="2" metric="-" british="-"/>
+			<item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+			<item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+			<item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+			<item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+			<item index="12" describe="通过次数" long-mnemonic="PASSNUMBER" short-mnemonic="PASSNUM" symbol="A" length="15" metric="" british=""/>
+			<item index="13" describe="未知" long-mnemonic="PWDSENSORDEPTH" short-mnemonic="DEPTWPR" symbol="" length="" metric="" british=""/>
+			<item index="15" describe="接收位" long-mnemonic="ACCEPTED" short-mnemonic="F15" symbol="" length="" metric="" british=""/>
+			<item index="16" describe="未知" long-mnemonic="ANNNULARPRESSURE" short-mnemonic="PANNX" symbol="" length="" metric="" british=""/>
+			<item index="17" describe="未知" long-mnemonic="MINIMUMANNULARPRESSURE" short-mnemonic="PMNANNX" symbol="" length="" metric="" british=""/>
+			<item index="18" describe="未知" long-mnemonic="MAXIMUMANNULARPRESSURE" short-mnemonic="PMXANNX" symbol="" length="" metric="" british=""/>
+			<item index="19" describe="未知" long-mnemonic="BOREPRESSURE" short-mnemonic="PBORX" symbol="" length="" metric="" british=""/>
+			<item index="20" describe="未知" long-mnemonic="MINIMUMBOREPRESSURE" short-mnemonic="PMNBORX" symbol="" length="" metric="" british=""/>
+			<item index="21" describe="未知" long-mnemonic="MAXIMUMBOREPRESSURE" short-mnemonic="PMXBORX" symbol="" length="" metric="" british=""/>
+			<item index="22" describe="未知" long-mnemonic="ANNULARTEMPERATURE" short-mnemonic="TANN" symbol="" length="" metric="" british=""/>
+			<item index="23" describe="未知" long-mnemonic="BORETEMPERATURE" short-mnemonic="TBOR" symbol="" length="" metric="" british=""/>
+			<item index="24" describe="未知" long-mnemonic="EQUIVALENTMUDWEIGHT" short-mnemonic="F24" symbol="" length="" metric="" british=""/>
+			<item index="56" describe="未知" long-mnemonic="PANNXSTATUS" short-mnemonic="F56" symbol="" length="" metric="" british=""/>
+			<item index="57" describe="未知" long-mnemonic="PMNANNXSTATUS" short-mnemonic="F57" symbol="" length="" metric="" british=""/>
+			<item index="58" describe="未知" long-mnemonic="PMXANNXSTATUS" short-mnemonic="F58" symbol="" length="" metric="" british=""/>
+			<item index="59" describe="未知" long-mnemonic="PBORXSTATUS" short-mnemonic="F59" symbol="" length="" metric="" british=""/>
+			<item index="60" describe="未知" long-mnemonic="PMNBORXSTATUS" short-mnemonic="F60" symbol="" length="" metric="" british=""/>
+			<item index="61" describe="未知" long-mnemonic="PMXBORXSTATUS" short-mnemonic="F61" symbol="" length="" metric="" british=""/>
+			<item index="62" describe="未知" long-mnemonic="TANNSTATUS" short-mnemonic="F62" symbol="" length="" metric="" british=""/>
+			<item index="63" describe="未知" long-mnemonic="TBORSTATUS" short-mnemonic="F63" symbol="" length="" metric="" british=""/>
+			<item index="64" describe="未知" long-mnemonic="EMWSTATUS" short-mnemonic="F64" symbol="" length="" metric="" british=""/>
+		</record>
+  <record index="57" describe="方位伽马成像(AZG)记录" type="157" auto="自动（随钻测量）及手动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
+      <item index="02" describe="侧钻／井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="测斜深度及读数（测量）" long-mnemonic="DEPTSVYM" short-mnemonic="DSVM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="12" describe="测斜类型" long-mnemonic="SVYTYPE" short-mnemonic="STYP" symbol="A" length="8" metric="-" british="-"/>
+      <item index="13" describe="深度" long-mnemonic="SVYINC" short-mnemonic="SINC" key-mnemonic="DEVI" symbol="F" length="4" metric="DEG" british="DEG"/>
+      <item index="14" describe="" long-mnemonic="SPR1" short-mnemonic="SPR1" key-mnemonic="AZIMU" symbol="F" length="4" metric="DEG" british="DEG"/>
+      <item index="15" describe="" long-mnemonic="SPR2" short-mnemonic="SPR2" key-mnemonic="AZIM" symbol="F" length="4" metric="DEG" british="DEG"/>
+      <item index="16" describe="" long-mnemonic="SPR3" short-mnemonic="SPR3" symbol="F" length="4" metric="DEG" british="DEG"/>
+      <item index="17" describe="" long-mnemonic="SPR4" short-mnemonic="SPR4" symbol="F" length="4" metric="DEG" british="DEG"/>
+      <item index="18" describe="" long-mnemonic="SPR5" short-mnemonic="SPR5" symbol="F" length="4" metric="-" british="-"/>
+      <item index="19" describe="方位伽马上" long-mnemonic="AZGRAUX" short-mnemonic="AZGRAUX" symbol="F" length="4" metric="API" british="API"/>
+      <item index="20" describe="方位伽马右" long-mnemonic="AZGRARX" short-mnemonic="AZGRARX" symbol="F" length="4" metric="API" british="API"/>
+      <item index="21" describe="方位伽马下" long-mnemonic="AZGRADX" short-mnemonic="AZGRADX" symbol="F" length="4" metric="API" british="API"/>
+      <item index="22" describe="方位伽马左" long-mnemonic="AZGRALX" short-mnemonic="AZGRALX" symbol="F" length="4" metric="API" british="API"/>
+    </record>
+  </APS>
   <Shenkai>
 	<record index="01" describe="以时间为基础的通用记录" type="151" auto="自动">
 		<item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="16" metric="-" british="-"/>
@@ -1475,10 +1496,10 @@
 		<item index="21" describe="７号池体积" long-mnemonic="TVOL07" short-mnemonic="TV07" symbol="F" length="4" metric="M3" british="BBL"/>
 		<item index="22" describe="８号池体积" long-mnemonic="TVOL08" short-mnemonic="TV08" symbol="F" length="4" metric="M3" british="BBL"/>
 		<item index="23" describe="９号池体积" long-mnemonic="TVOL09" short-mnemonic="TV09" symbol="F" length="4" metric="M3" british="BBL"/>
-		<item index="24" describe="10号池体积" long-mnemonic="TVOL09" short-mnemonic="TV09" symbol="F" length="4" metric="M3" british="BBL"/>
-		<item index="25" describe="11号池体积" long-mnemonic="TVOL09" short-mnemonic="TV09" symbol="F" length="4" metric="M3" british="BBL"/>
-		<item index="26" describe="12号池体积" long-mnemonic="TVOL09" short-mnemonic="TV09" symbol="F" length="4" metric="M3" british="BBL"/>
-		<item index="27" describe="13号池体积" long-mnemonic="TVOL09" short-mnemonic="TV09" symbol="F" length="4" metric="M3" british="BBL"/>
+		<item index="24" describe="10号池体积" long-mnemonic="TVOL10" short-mnemonic="TV10" symbol="F" length="4" metric="M3" british="BBL"/>
+		<item index="25" describe="11号池体积" long-mnemonic="TVOL11" short-mnemonic="TV11" symbol="F" length="4" metric="M3" british="BBL"/>
+		<item index="26" describe="12号池体积" long-mnemonic="TVOL12" short-mnemonic="TV12" symbol="F" length="4" metric="M3" british="BBL"/>
+		<item index="27" describe="13号池体积" long-mnemonic="TVOL13" short-mnemonic="TV13" symbol="F" length="4" metric="M3" british="BBL"/>
 		<item index="28" describe="14号池体积" long-mnemonic="TVOL14" short-mnemonic="TV14" symbol="F" length="4" metric="M3" british="BBL"/>
 		<item index="29" describe="起下钻１号池体积" long-mnemonic="TTVOL1" short-mnemonic="TTV1" symbol="F" length="4" metric="M3" british="BBL"/>
 		<item index="30" describe="起下钻２号池体积" long-mnemonic="TTVOL2" short-mnemonic="TTV2" symbol="F" length="4" metric="M3" british="BBL"/>
@@ -1673,6 +1694,430 @@
 		<item index="10" describe="注释" long-mnemonic="" short-mnemonic="" symbol="" length="" metric="" british=""/>
 	</record>
 	</Shenkai>
+  <Shenkai2000C>
+    <record index="01" describe="以时间为基础的通用记录" type="151" auto="自动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="16" metric="-" british="-"/>
+      <item index="02" describe="侧钻/井眼号" long-mnemonic="STKNO" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="钻头深度（测量）" long-mnemonic="DEPTBITM" short-mnemonic="DBTM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="钻头深度（垂深）" long-mnemonic="DEPTBITV" short-mnemonic="DBTV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="井眼深度（测量）" long-mnemonic="DEPTMEAS" short-mnemonic="DMEA" key-mnemonic="DEPTH" symbol="F" length="4" metric="M" british="F"/>
+      <item index="11" describe="井眼深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DVER" key-mnemonic="TVD" symbol="F" length="4" metric="M" british="F"/>
+      <item index="12" describe="游车位置" long-mnemonic="BLKPOS" short-mnemonic="BPOS" symbol="F" length="4" metric="M" british="F"/>
+      <item index="13" describe="机械钻速（平均）" long-mnemonic="ROPA" short-mnemonic="ROPA" symbol="F" length="4" metric="M/HR" british="F/HR"/>
+      <item index="14" describe="大钩负荷（平均）" long-mnemonic="HKLA" short-mnemonic="HKLA" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="15" describe="大钩负荷（最大）" long-mnemonic="HKLX" short-mnemonic="HKLX" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="16" describe="钻压（地面，平均）" long-mnemonic="WOBA" short-mnemonic="WOBA" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="17" describe="钻压（地面，最大）" long-mnemonic="WOBX" short-mnemonic="WOBX" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="18" describe="转盘扭矩（地面，平均）" long-mnemonic="TORQA" short-mnemonic="TQA" symbol="F" length="4" metric="KNM" british="KFLB"/>
+      <item index="19" describe="转盘扭矩（地面，最大）" long-mnemonic="TORQX" short-mnemonic="TQX" symbol="F" length="4" metric="KNM" british="KFLB"/>
+      <item index="20" describe="转盘速度（地面，平均）" long-mnemonic="RPMA" short-mnemonic="RPMA" symbol="S" length="2" metric="RPM" british="RPM"/>
+      <item index="21" describe="立管压力（平均）" long-mnemonic="SPPA" short-mnemonic="SPPA" symbol="F" length="4" metric="KPA" british="PSI"/>
+      <item index="22" describe="套管压力" long-mnemonic="CHKP" short-mnemonic="CHKP" symbol="F" length="4" metric="KPA" british="PSI"/>
+      <item index="23" describe="1#泵冲速" long-mnemonic="SPM1" short-mnemonic="SPM1" symbol="S" length="2" metric="SPM" british="SPM"/>
+      <item index="24" describe="2#泵冲速" long-mnemonic="SPM2" short-mnemonic="SPM2" symbol="S" length="2" metric="SPM" british="SPM"/>
+      <item index="25" describe="3#泵冲速" long-mnemonic="SPM3" short-mnemonic="SPM3" symbol="S" length="2" metric="SPM" british="SPM"/>
+      <item index="26" describe="泥浆池体积（活动）" long-mnemonic="TVOLACT" short-mnemonic="TVA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="27" describe="泥浆池体积变化（活动）" long-mnemonic="TVOLCACT" short-mnemonic="TVCA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="28" describe="泥浆流量％" long-mnemonic="MFOP" short-mnemonic="MFOP" symbol="S" length="2" metric="%" british="%"/>
+      <item index="29" describe="出口泥浆流量（平均）" long-mnemonic="MFOA" short-mnemonic="MFOA" symbol="F" length="4" metric="L/M" british="BBL"/>
+      <item index="30" describe="入口泥浆流量（平均）" long-mnemonic="MFIA" short-mnemonic="MFIA" symbol="F" length="4" metric="L/M" british="BBL"/>
+      <item index="31" describe="出口泥浆密度（平均）" long-mnemonic="MDOA" short-mnemonic="MDOA" symbol="F" length="4" metric="KGM3" british="PPG"/>
+      <item index="32" describe="入口泥浆密度（平均）" long-mnemonic="MDIA" short-mnemonic="MDIA" symbol="F" length="4" metric="KGM3" british="PPG"/>
+      <item index="33" describe="出口泥浆温度（平均）" long-mnemonic="MTOA" short-mnemonic="MTOA" symbol="F" length="4" metric="DEGC" british="DEGF"/>
+      <item index="34" describe="入口泥浆温度（平均）" long-mnemonic="MTIA" short-mnemonic="MTIA" symbol="F" length="4" metric="DEGC" british="DEGF"/>
+      <item index="35" describe="出口泥浆电阻率（平均）" long-mnemonic="MCOA" short-mnemonic="MCOA" symbol="F" length="4" metric="MMHO" british="MMHO"/>
+      <item index="36" describe="入口泥浆电阻率（平均）" long-mnemonic="MCIA" short-mnemonic="MCIA" symbol="F" length="4" metric="MMHO" british="MMHO"/>
+      <item index="37" describe="泵冲数（总计）" long-mnemonic="STKC" short-mnemonic="STKC" symbol="L" length="4" metric="-" british="-"/>
+      <item index="38" describe="滞后泵冲" long-mnemonic="LAGSTKS" short-mnemonic="LSTK" symbol="S" length="2" metric="-" british="-"/>
+      <item index="39" describe="迟到井深（测量）" long-mnemonic="DEPTRETM" short-mnemonic="DRTM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="40" describe="气（平均）" long-mnemonic="GASA" short-mnemonic="GASA" symbol="F" length="4" metric="%" british="%"/>
+      <item index="41" describe="〈备用1〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="F" length="4" metric="-" british="-"/>
+      <item index="42" describe="〈备用2〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="F" length="4" metric="-" british="-"/>
+      <item index="43" describe="〈备用3〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="F" length="4" metric="-" british="-"/>
+      <item index="44" describe="〈备用4〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="F" length="4" metric="-" british="-"/>
+      <item index="45" describe="〈备用5〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="F" length="4" metric="-" british="-"/>
+    </record>
+    <record index="11" describe="泥浆池体积" type="161" auto="手动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
+      <item index="02" describe="侧钻／井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="井眼深度（测深）" long-mnemonic="DEPTMEAS" short-mnemonic="DMEA" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="井眼深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DVER" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="池体积（总计）" long-mnemonic="TVOLTOT" short-mnemonic="TVT" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="11" describe="池体积（活动）" long-mnemonic="TVOLACT" short-mnemonic="TVA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="12" describe="池体积变化（总计）" long-mnemonic="TVOLCTOT" short-mnemonic="TVCT" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="13" describe="池体积变化（活动）" long-mnemonic="TVOLCACT" short-mnemonic="TVCA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="14" describe="池体积复位时间" long-mnemonic="TVRESET" short-mnemonic="TVRT" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="15" describe="１号池体积" long-mnemonic="TVOL01" short-mnemonic="TV01" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="16" describe="２号池体积" long-mnemonic="TVOL02" short-mnemonic="TV02" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="17" describe="３号池体积" long-mnemonic="TVOL03" short-mnemonic="TV03" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="18" describe="４号池体积" long-mnemonic="TVOL04" short-mnemonic="TV04" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="19" describe="５号池体积" long-mnemonic="TVOL05" short-mnemonic="TV05" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="20" describe="６号池体积" long-mnemonic="TVOL06" short-mnemonic="TV06" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="21" describe="７号池体积" long-mnemonic="TVOL07" short-mnemonic="TV07" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="22" describe="８号池体积" long-mnemonic="TVOL08" short-mnemonic="TV08" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="23" describe="９号池体积" long-mnemonic="TVOL09" short-mnemonic="TV09" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="24" describe="10号池体积" long-mnemonic="TVOL10" short-mnemonic="TV10" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="25" describe="11号池体积" long-mnemonic="TVOL11" short-mnemonic="TV11" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="26" describe="12号池体积" long-mnemonic="TVOL12" short-mnemonic="TV12" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="27" describe="13号池体积" long-mnemonic="TVOL13" short-mnemonic="TV13" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="28" describe="14号池体积" long-mnemonic="TVOL14" short-mnemonic="TV14" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="29" describe="起下钻１号池体积" long-mnemonic="TTVOL1" short-mnemonic="TTV1" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="30" describe="起下钻２号池体积" long-mnemonic="TTVOL2" short-mnemonic="TTV2" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="31" describe="〈备用１〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="32" describe="〈备用２〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="33" describe="〈备用３〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="34" describe="〈备用４〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="35" describe="〈备用５〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="F" length="4" metric="M3" british="BBL"/>
+    </record>
+    <record index="12" describe="以周期为基础的气体色谱分析" type="162" auto="自动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
+      <item index="02" describe="侧钻／井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="组分样品深度（测深）" long-mnemonic="DEPTCHRM" short-mnemonic="DCHM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="组分样品深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DCHV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="组分样品日期" long-mnemonic="DATECHR" short-mnemonic="DCHR" symbol="L" length="4" metric="-" british="-"/>
+      <item index="11" describe="组分样品时间" long-mnemonic="TIMECHR" short-mnemonic="TCHR" symbol="L" length="4" metric="-" british="-"/>
+      <item index="12" describe="甲烷（Ｃ1）" long-mnemonic="METHANE" short-mnemonic="METH" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="13" describe="乙烷（Ｃ2）" long-mnemonic="ETHANE" short-mnemonic="ETH" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="14" describe="丙浣（Ｃ3）" long-mnemonic="PROPANE" short-mnemonic="PRP" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="15" describe="异丁烷（ｉＣ4）" long-mnemonic="IBUTANE" short-mnemonic="IBUT" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="16" describe="正丁烷（ＮＣ4）" long-mnemonic="NBUTANE" short-mnemonic="NBUT" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="17" describe="异戊烷（ｉＣ5）" long-mnemonic="IPENTANE" short-mnemonic="IPEN" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="18" describe="正戊烷（ＮＣ5）" long-mnemonic="NPENTANE" short-mnemonic="NPEN" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="19" describe="新戊烷（ＥＣ5）" long-mnemonic="EPENTANE" short-mnemonic="EPEN" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="20" describe="异己烷（ｉＣ6）" long-mnemonic="IHEXANE" short-mnemonic="IHEX" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="21" describe="正己烷（ＮＣ6）" long-mnemonic="NHEXANE" short-mnemonic="NHEX" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="22" describe="二氧化碳" long-mnemonic="CO2" short-mnemonic="CO2" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="23" describe="乙炔" long-mnemonic="ACET" short-mnemonic="ACET" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="24" describe="〈备用１〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="" length="" metric="" british=""/>
+      <item index="25" describe="〈备用２〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="" length="" metric="" british=""/>
+      <item index="26" describe="〈备用３〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="" length="" metric="" british=""/>
+      <item index="27" describe="〈备用４〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="" length="" metric="" british=""/>
+      <item index="28" describe="〈备用５〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="" length="" metric="" british=""/>
+    </record>
+    <record index="19" describe="配置记录" type="169" auto="手动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="16" metric="-" british="-"/>
+      <item index="02" describe="侧钻／井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="井眼深度（测深）" long-mnemonic="DEPTMEAS" short-mnemonic="DMEA" key-mnemonic="DEPTH" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="井眼深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DVER" key-mnemonic="TVD" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="钻柱分段序号" long-mnemonic="DSNUM" short-mnemonic="DSNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="11" describe="钻柱１外径" long-mnemonic="DS1OD" short-mnemonic="D1OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="12" describe="钻柱１内径" long-mnemonic="DS1ID" short-mnemonic="D1ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="13" describe="钻柱１接头内径" long-mnemonic="DSJID" short-mnemonic="D1JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="14" describe="钻柱１接头外径" long-mnemonic="DS1JOD" short-mnemonic="D1JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="15" describe="钻柱１单位长度的质量" long-mnemonic="DS1MASS" short-mnemonic="D1MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="16" describe="钻柱１长度" long-mnemonic="DS1LEN" short-mnemonic="D1LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="17" describe="钻柱２外径" long-mnemonic="DS2OD" short-mnemonic="D2OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="18" describe="钻柱２内径" long-mnemonic="DS2ID" short-mnemonic="D2ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="19" describe="钻柱２接头内径" long-mnemonic="DS2JID" short-mnemonic="D2JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="20" describe="钻柱２接头外径" long-mnemonic="DS2JOD" short-mnemonic="D2JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="21" describe="钻柱２单位长度的质量" long-mnemonic="DS2MASS" short-mnemonic="D2MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="22" describe="钻柱２长度" long-mnemonic="DS2LEN" short-mnemonic="D2LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="23" describe="钻柱３外径" long-mnemonic="DS3OD" short-mnemonic="D3OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="24" describe="钻柱３内径" long-mnemonic="DS3ID" short-mnemonic="D3ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="25" describe="钻柱３接头内径" long-mnemonic="DS3JID" short-mnemonic="D3JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="26" describe="钻柱３接头外径" long-mnemonic="DS3JOD" short-mnemonic="D3JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="27" describe="钻柱３单位长度的质量" long-mnemonic="DS3MASS" short-mnemonic="D3MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="28" describe="钻柱３长度" long-mnemonic="DS3LEN" short-mnemonic="D3LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="29" describe="钻柱４外径" long-mnemonic="DS4OD" short-mnemonic="D4OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="30" describe="钻柱４内径" long-mnemonic="DS4ID" short-mnemonic="D4ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="31" describe="钻柱４接头内径" long-mnemonic="DS4JID" short-mnemonic="D4JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="32" describe="钻柱４接头外径" long-mnemonic="DS4JOD" short-mnemonic="D4JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="33" describe="钻柱４单位长度的质量" long-mnemonic="DS4MASS" short-mnemonic="D4MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="34" describe="钻柱４长度" long-mnemonic="DS4LEN" short-mnemonic="D4LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="35" describe="钻柱５外径" long-mnemonic="DS5OD" short-mnemonic="D5OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="36" describe="钻柱５内径" long-mnemonic="DS5ID" short-mnemonic="D5ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="37" describe="钻柱５接头内径" long-mnemonic="DS5JID" short-mnemonic="D5JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="38" describe="钻柱５接头外径" long-mnemonic="DS5JOD" short-mnemonic="D5JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="39" describe="钻柱５单位长度的质量" long-mnemonic="DS5MASS" short-mnemonic="D5MA" symbol="F" length="4" metric="LG/M" british="LB/F"/>
+      <item index="40" describe="钻柱５长度" long-mnemonic="DS5LEN" short-mnemonic="D5LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="41" describe="钻柱６外径" long-mnemonic="DS6OD" short-mnemonic="D6OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="42" describe="钻柱６内径" long-mnemonic="DS6ID" short-mnemonic="D6ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="43" describe="钻柱６接头内径" long-mnemonic="DS6JID" short-mnemonic="D6JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="44" describe="钻柱６接头外径" long-mnemonic="DS6JOD" short-mnemonic="D6JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="45" describe="钻柱６单位长度的质量" long-mnemonic="DS6MASS" short-mnemonic="D6MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="46" describe="方钻杆内径" long-mnemonic="KELLYID" short-mnemonic="KID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="47" describe="方钻杆长度" long-mnemonic="KELLYOD" short-mnemonic="KOD" symbol="F" length="4" metric="M" british="F"/>
+      <item index="48" describe="钻杆立根长度" long-mnemonic="DPSTDLEN" short-mnemonic="SLEN" symbol="F" length="4" metric="M" british="F"/>
+      <item index="49" describe="接头/立柱号" long-mnemonic="DPSTDJINT" short-mnemonic="SJNT" symbol="S" length="2" metric="-" british="-"/>
+      <item index="50" describe="井段号" long-mnemonic="HOLELUN" short-mnemonic="HLNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="51" describe="第一段井眼直径" long-mnemonic="HL1DIAN" short-mnemonic="H1DI" symbol="F" length="4" metric="MM" british="F"/>
+      <item index="52" describe="第一段井眼长度" long-mnemonic="HL1LEN" short-mnemonic="H1LE" symbol="F" length="4" metric="N" british="F"/>
+      <item index="53" describe="第二段井眼直径" long-mnemonic="HL2DIAN" short-mnemonic="H2DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="54" describe="第二段井眼长度" long-mnemonic="HL2LEN" short-mnemonic="H2LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="55" describe="第三段井眼直径" long-mnemonic="HL3DIAN" short-mnemonic="H3DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="56" describe="第三段井眼长度" long-mnemonic="HL3HLEN" short-mnemonic="H3LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="57" describe="第四段井眼直径" long-mnemonic="HL4DIAN" short-mnemonic="H4DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="58" describe="第四段井眼长度" long-mnemonic="HL4HLEN" short-mnemonic="H4LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="59" describe="第五段井眼直径" long-mnemonic="HL5DIAN" short-mnemonic="H5DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="60" describe="１号泵功率" long-mnemonic="PUMP1CAP" short-mnemonic="P1CA" symbol="F" length="4" metric="M3ST" british="B/ST"/>
+      <item index="61" describe="１号泵效率" long-mnemonic="PUMPEFF" short-mnemonic="P1EF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="62" describe="２号泵功率" long-mnemonic="PUMP2CAP" short-mnemonic="P2CA" symbol="F" length="4" metric="M3ST" british="B/ST"/>
+      <item index="63" describe="２号泵效率" long-mnemonic="PUMP2EFF" short-mnemonic="P2EF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="64" describe="３号泵功率" long-mnemonic="PUMP3CAP" short-mnemonic="P3CA" symbol="F" length="4" metric="M3ST" british="B/ST"/>
+      <item index="65" describe="３号泵效率" long-mnemonic="PUMP4EFF" short-mnemonic="P3EF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="66" describe="钻机作业成本" long-mnemonic="RIGCOST" short-mnemonic="RIGC" symbol="F" length="4" metric="-" british="$"/>
+      <item index="67" describe="起下钻速度" long-mnemonic="TRIPRATE" short-mnemonic="TRRP" symbol="F" length="4" metric="KPH" british="KF/H"/>
+      <item index="68" describe="压井管线内径" long-mnemonic="KILLID" short-mnemonic="KLID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="69" describe="压井管线接头内径" long-mnemonic="KILLJID" short-mnemonic="KLJD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="70" describe="压井管线接头系数" long-mnemonic="KILLJF" short-mnemonic="KLJF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="71" describe="压井管线长度" long-mnemonic="KILLLEN" short-mnemonic="KLLE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="72" describe="节流管线内径" long-mnemonic="CHKID" short-mnemonic="CHID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="73" describe="节流管线接头内径" long-mnemonic="CHKOD" short-mnemonic="CHOD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="74" describe="节流管线接头系数" long-mnemonic="CHKJF" short-mnemonic="CHJF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="75" describe="节流管线长度" long-mnemonic="CHKLEN" short-mnemonic="CHLE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="76" describe="套管鞋井深" long-mnemonic="DEPTCSGM" short-mnemonic="DCGM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="77" describe="套管鞋垂深井深" long-mnemonic="FEPTCSGV" short-mnemonic="DCGV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="78" describe="泥浆池夜面井深" long-mnemonic="DEPTPITM" short-mnemonic="DPTM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="79" describe="泥浆液面垂深井深" long-mnemonic="DEPTPITV" short-mnemonic="DPTV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="80" describe="破裂压力梯度" long-mnemonic="FPGPIT" short-mnemonic="FPIT" symbol="F" length="4" metric="KGM3" british="PPG"/>
+      <item index="81" describe="钻井承包商" long-mnemonic="DRLGCONT" short-mnemonic="CONT" symbol="A" length="16" metric="-" british="-"/>
+      <item index="82" describe="钻机名称" long-mnemonic="RIGNAME" short-mnemonic="RIG" symbol="A" length="16" metric="-" british="-"/>
+      <item index="83" describe="钻机类型" long-mnemonic="RIGTYPE" short-mnemonic="RTYP" symbol="A" length="16" metric="-" british="-"/>
+      <item index="84" describe="服务公司１" long-mnemonic="VENDOR1" short-mnemonic="VEN1" symbol="A" length="32" metric="-" british="-"/>
+      <item index="85" describe="服务公司２" long-mnemonic="VENDOR2" short-mnemonic="VEN2" symbol="A" length="32" metric="-" british="-"/>
+      <item index="86" describe="服务公司３" long-mnemonic="VENDOR3" short-mnemonic="VEN3" symbol="A" length="32" metric="-" british="-"/>
+      <item index="87" describe="服务公司４" long-mnemonic="VENDOR4" short-mnemonic="VEN4" symbol="A" length="32" metric="-" british="-"/>
+      <item index="88" describe="服务公司５" long-mnemonic="VENDOR5" short-mnemonic="VEN5" symbol="A" length="32" metric="-" british="-"/>
+      <item index="89" describe="服务公司６" long-mnemonic="VENDOR6" short-mnemonic="VEN6" symbol="A" length="32" metric="-" british="-"/>
+      <item index="90" describe="〈备用１〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="F" length="4" metric="-" british="-"/>
+      <item index="91" describe="〈备用２〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="F" length="4" metric="-" british="-"/>
+      <item index="92" describe="〈备用３〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="F" length="4" metric="-" british="-"/>
+      <item index="93" describe="〈备用４〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="F" length="4" metric="-" british="-"/>
+      <item index="94" describe="〈备用５〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="F" length="4" metric="-" british="-"/>
+    </record>
+  </Shenkai2000C>
+  <ACE>
+    <record index="01" describe="以时间为基础的通用记录" type="151" auto="自动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="16" metric="-" british="-"/>
+      <item index="02" describe="侧钻/井眼号" long-mnemonic="STKNO" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="钻头深度（测量）" long-mnemonic="DEPTBITM" short-mnemonic="DBTM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="钻头深度（垂深）" long-mnemonic="DEPTBITV" short-mnemonic="DBTV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="井眼深度（测量）" long-mnemonic="DEPTMEAS" short-mnemonic="DMEA" key-mnemonic="DEPTH" symbol="F" length="4" metric="M" british="F"/>
+      <item index="11" describe="井眼深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DVER" key-mnemonic="TVD" symbol="F" length="4" metric="M" british="F"/>
+      <item index="12" describe="游车位置" long-mnemonic="BLKPOS" short-mnemonic="BPOS" symbol="F" length="4" metric="M" british="F"/>
+      <item index="13" describe="机械钻速（平均）" long-mnemonic="ROPA" short-mnemonic="ROPA" symbol="F" length="4" metric="M/HR" british="F/HR"/>
+      <item index="14" describe="大钩负荷（平均）" long-mnemonic="HKLA" short-mnemonic="HKLA" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="15" describe="大钩负荷（最大）" long-mnemonic="HKLX" short-mnemonic="HKLX" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="16" describe="钻压（地面，平均）" long-mnemonic="WOBA" short-mnemonic="WOBA" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="17" describe="钻压（地面，最大）" long-mnemonic="WOBX" short-mnemonic="WOBX" symbol="F" length="4" metric="KDN" british="KLB"/>
+      <item index="18" describe="转盘扭矩（地面，平均）" long-mnemonic="TORQA" short-mnemonic="TQA" symbol="F" length="4" metric="KNM" british="KFLB"/>
+      <item index="19" describe="转盘扭矩（地面，最大）" long-mnemonic="TORQX" short-mnemonic="TQX" symbol="F" length="4" metric="KNM" british="KFLB"/>
+      <item index="20" describe="转盘速度（地面，平均）" long-mnemonic="RPMA" short-mnemonic="RPMA" symbol="S" length="2" metric="RPM" british="RPM"/>
+      <item index="21" describe="立管压力（平均）" long-mnemonic="SPPA" short-mnemonic="SPPA" symbol="F" length="4" metric="KPA" british="PSI"/>
+      <item index="22" describe="套管压力" long-mnemonic="CHKP" short-mnemonic="CHKP" symbol="F" length="4" metric="KPA" british="PSI"/>
+      <item index="23" describe="1#泵冲速" long-mnemonic="SPM1" short-mnemonic="SPM1" symbol="S" length="2" metric="SPM" british="SPM"/>
+      <item index="24" describe="2#泵冲速" long-mnemonic="SPM2" short-mnemonic="SPM2" symbol="S" length="2" metric="SPM" british="SPM"/>
+      <item index="25" describe="3#泵冲速" long-mnemonic="SPM3" short-mnemonic="SPM3" symbol="S" length="2" metric="SPM" british="SPM"/>
+      <item index="26" describe="泥浆池体积（活动）" long-mnemonic="TVOLACT" short-mnemonic="TVA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="27" describe="泥浆池体积变化（活动）" long-mnemonic="TVOLCACT" short-mnemonic="TVCA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="28" describe="泥浆流量％" long-mnemonic="MFOP" short-mnemonic="MFOP" symbol="S" length="2" metric="%" british="%"/>
+      <item index="29" describe="出口泥浆流量（平均）" long-mnemonic="MFOA" short-mnemonic="MFOA" symbol="F" length="4" metric="L/M" british="BBL"/>
+      <item index="30" describe="入口泥浆流量（平均）" long-mnemonic="MFIA" short-mnemonic="MFIA" symbol="F" length="4" metric="L/M" british="BBL"/>
+      <item index="31" describe="出口泥浆密度（平均）" long-mnemonic="MDOA" short-mnemonic="MDOA" symbol="F" length="4" metric="KGM3" british="PPG"/>
+      <item index="32" describe="入口泥浆密度（平均）" long-mnemonic="MDIA" short-mnemonic="MDIA" symbol="F" length="4" metric="KGM3" british="PPG"/>
+      <item index="33" describe="出口泥浆温度（平均）" long-mnemonic="MTOA" short-mnemonic="MTOA" symbol="F" length="4" metric="DEGC" british="DEGF"/>
+      <item index="34" describe="入口泥浆温度（平均）" long-mnemonic="MTIA" short-mnemonic="MTIA" symbol="F" length="4" metric="DEGC" british="DEGF"/>
+      <item index="35" describe="出口泥浆电阻率（平均）" long-mnemonic="MCOA" short-mnemonic="MCOA" symbol="F" length="4" metric="MMHO" british="MMHO"/>
+      <item index="36" describe="入口泥浆电阻率（平均）" long-mnemonic="MCIA" short-mnemonic="MCIA" symbol="F" length="4" metric="MMHO" british="MMHO"/>
+      <item index="37" describe="泵冲数（总计）" long-mnemonic="STKC" short-mnemonic="STKC" symbol="L" length="4" metric="-" british="-"/>
+      <item index="38" describe="滞后泵冲" long-mnemonic="LAGSTKS" short-mnemonic="LSTK" symbol="S" length="2" metric="-" british="-"/>
+      <item index="39" describe="迟到井深（测量）" long-mnemonic="DEPTRETM" short-mnemonic="DRTM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="40" describe="气（平均）" long-mnemonic="GASA" short-mnemonic="GASA" symbol="F" length="4" metric="%" british="%"/>
+      <item index="41" describe="〈备用1〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="F" length="4" metric="-" british="-"/>
+      <item index="42" describe="〈备用2〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="F" length="4" metric="-" british="-"/>
+      <item index="43" describe="〈备用3〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="F" length="4" metric="-" british="-"/>
+      <item index="44" describe="〈备用4〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="F" length="4" metric="-" british="-"/>
+      <item index="45" describe="〈备用5〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="F" length="4" metric="-" british="-"/>
+    </record>
+    <record index="11" describe="泥浆池体积" type="161" auto="手动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
+      <item index="02" describe="侧钻／井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="井眼深度（测深）" long-mnemonic="DEPTMEAS" short-mnemonic="DMEA" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="井眼深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DVER" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="池体积（总计）" long-mnemonic="TVOLTOT" short-mnemonic="TVT" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="11" describe="池体积（活动）" long-mnemonic="TVOLACT" short-mnemonic="TVA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="12" describe="池体积变化（总计）" long-mnemonic="TVOLCTOT" short-mnemonic="TVCT" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="13" describe="池体积变化（活动）" long-mnemonic="TVOLCACT" short-mnemonic="TVCA" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="14" describe="池体积复位时间" long-mnemonic="TVRESET" short-mnemonic="TVRT" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="15" describe="1号池体积" long-mnemonic="TVOL01" short-mnemonic="TV01" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="16" describe="2号池体积" long-mnemonic="TVOL02" short-mnemonic="TV02" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="17" describe="3号池体积" long-mnemonic="TVOL03" short-mnemonic="TV03" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="18" describe="4号池体积" long-mnemonic="TVOL04" short-mnemonic="TV04" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="19" describe="5号池体积" long-mnemonic="TVOL05" short-mnemonic="TV05" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="20" describe="6号池体积" long-mnemonic="TVOL06" short-mnemonic="TV06" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="21" describe="7号池体积" long-mnemonic="TVOL07" short-mnemonic="TV07" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="22" describe="8号池体积" long-mnemonic="TVOL08" short-mnemonic="TV08" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="23" describe="9号池体积" long-mnemonic="TVOL09" short-mnemonic="TV09" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="24" describe="10号池体积" long-mnemonic="TVOL10" short-mnemonic="TV10" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="25" describe="11号池体积" long-mnemonic="TVOL11" short-mnemonic="TV11" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="26" describe="12号池体积" long-mnemonic="TVOL12" short-mnemonic="TV12" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="27" describe="13号池体积" long-mnemonic="TVOL13" short-mnemonic="TV13" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="28" describe="14号池体积" long-mnemonic="TVOL14" short-mnemonic="TV14" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="29" describe="起下钻1号池体积" long-mnemonic="TTVOL1" short-mnemonic="TTV1" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="30" describe="起下钻2号池体积" long-mnemonic="TTVOL2" short-mnemonic="TTV2" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="31" describe="〈备用1〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="32" describe="〈备用2〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="33" describe="〈备用3〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="34" describe="〈备用4〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="F" length="4" metric="M3" british="BBL"/>
+      <item index="35" describe="〈备用5〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="F" length="4" metric="M3" british="BBL"/>
+    </record>
+    <record index="12" describe="以周期为基础的气体色谱分析" type="162" auto="自动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="15" metric="-" british="-"/>
+      <item index="02" describe="侧钻／井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="组分样品深度（测深）" long-mnemonic="DEPTCHRM" short-mnemonic="DCHM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="组分样品深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DCHV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="组分样品日期" long-mnemonic="DATECHR" short-mnemonic="DCHR" symbol="L" length="4" metric="-" british="-"/>
+      <item index="11" describe="组分样品时间" long-mnemonic="TIMECHR" short-mnemonic="TCHR" symbol="L" length="4" metric="-" british="-"/>
+      <item index="12" describe="甲烷（C1）" long-mnemonic="METHANE" short-mnemonic="METH" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="13" describe="乙烷（C2）" long-mnemonic="ETHANE" short-mnemonic="ETH" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="14" describe="丙浣（C3）" long-mnemonic="PROPANE" short-mnemonic="PRP" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="15" describe="异丁烷（iC4）" long-mnemonic="IBUTANE" short-mnemonic="IBUT" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="16" describe="正丁烷（NC4）" long-mnemonic="NBUTANE" short-mnemonic="NBUT" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="17" describe="异戊烷（iC5）" long-mnemonic="IPENTANE" short-mnemonic="IPEN" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="18" describe="正戊烷（NC5）" long-mnemonic="NPENTANE" short-mnemonic="NPEN" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="19" describe="新戊烷（EC5）" long-mnemonic="EPENTANE" short-mnemonic="EPEN" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="20" describe="异己烷（iC6）" long-mnemonic="IHEXANE" short-mnemonic="IHEX" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="21" describe="正己烷（NC6）" long-mnemonic="NHEXANE" short-mnemonic="NHEX" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="22" describe="二氧化碳" long-mnemonic="CO2" short-mnemonic="CO2" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="23" describe="乙炔" long-mnemonic="ACET" short-mnemonic="ACET" symbol="L" length="4" metric="PPM" british="PPM"/>
+      <item index="24" describe="〈备用1〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="" length="" metric="" british=""/>
+      <item index="25" describe="〈备用2〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="" length="" metric="" british=""/>
+      <item index="26" describe="〈备用3〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="" length="" metric="" british=""/>
+      <item index="27" describe="〈备用4〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="" length="" metric="" british=""/>
+      <item index="28" describe="〈备用5〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="" length="" metric="" british=""/>
+    </record>
+    <record index="19" describe="配置记录" type="169" auto="手动">
+      <item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="16" metric="-" british="-"/>
+      <item index="02" describe="侧钻／井眼号" long-mnemonic="STKNUM" short-mnemonic="SKNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="03" describe="记录标识符" long-mnemonic="RECID" short-mnemonic="RID" symbol="S" length="2" metric="-" british="-"/>
+      <item index="04" describe="序列标识符" long-mnemonic="SEQID" short-mnemonic="SQID" symbol="L" length="4" metric="-" british="-"/>
+      <item index="05" describe="日期" long-mnemonic="DATE" short-mnemonic="DATE" symbol="L" length="4" metric="-" british="-"/>
+      <item index="06" describe="时间" long-mnemonic="TIME" short-mnemonic="TIME" symbol="L" length="4" metric="-" british="-"/>
+      <item index="07" describe="活动码" long-mnemonic="ACTCOD" short-mnemonic="ACTC" symbol="S" length="2" metric="-" british="-"/>
+      <item index="08" describe="井眼深度（测深）" long-mnemonic="DEPTMEAS" short-mnemonic="DMEA" key-mnemonic="DEPTH" symbol="F" length="4" metric="M" british="F"/>
+      <item index="09" describe="井眼深度（垂深）" long-mnemonic="DEPTVERT" short-mnemonic="DVER" key-mnemonic="TVD" symbol="F" length="4" metric="M" british="F"/>
+      <item index="10" describe="钻柱分段序号" long-mnemonic="DSNUM" short-mnemonic="DSNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="11" describe="钻柱1外径" long-mnemonic="DS1OD" short-mnemonic="D1OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="12" describe="钻柱1内径" long-mnemonic="DS1ID" short-mnemonic="D1ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="13" describe="钻柱1接头内径" long-mnemonic="DSJID" short-mnemonic="D1JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="14" describe="钻柱1接头外径" long-mnemonic="DS1JOD" short-mnemonic="D1JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="15" describe="钻柱1单位长度的质量" long-mnemonic="DS1MASS" short-mnemonic="D1MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="16" describe="钻柱1长度" long-mnemonic="DS1LEN" short-mnemonic="D1LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="17" describe="钻柱2外径" long-mnemonic="DS2OD" short-mnemonic="D2OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="18" describe="钻柱2内径" long-mnemonic="DS2ID" short-mnemonic="D2ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="19" describe="钻柱2接头内径" long-mnemonic="DS2JID" short-mnemonic="D2JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="20" describe="钻柱2接头外径" long-mnemonic="DS2JOD" short-mnemonic="D2JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="21" describe="钻柱2单位长度的质量" long-mnemonic="DS2MASS" short-mnemonic="D2MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="22" describe="钻柱2长度" long-mnemonic="DS2LEN" short-mnemonic="D2LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="23" describe="钻柱3外径" long-mnemonic="DS3OD" short-mnemonic="D3OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="24" describe="钻柱3内径" long-mnemonic="DS3ID" short-mnemonic="D3ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="25" describe="钻柱3接头内径" long-mnemonic="DS3JID" short-mnemonic="D3JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="26" describe="钻柱3接头外径" long-mnemonic="DS3JOD" short-mnemonic="D3JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="27" describe="钻柱3单位长度的质量" long-mnemonic="DS3MASS" short-mnemonic="D3MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="28" describe="钻柱3长度" long-mnemonic="DS3LEN" short-mnemonic="D3LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="29" describe="钻柱4外径" long-mnemonic="DS4OD" short-mnemonic="D4OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="30" describe="钻柱4内径" long-mnemonic="DS4ID" short-mnemonic="D4ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="31" describe="钻柱4接头内径" long-mnemonic="DS4JID" short-mnemonic="D4JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="32" describe="钻柱4接头外径" long-mnemonic="DS4JOD" short-mnemonic="D4JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="33" describe="钻柱4单位长度的质量" long-mnemonic="DS4MASS" short-mnemonic="D4MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="34" describe="钻柱4长度" long-mnemonic="DS4LEN" short-mnemonic="D4LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="35" describe="钻柱5外径" long-mnemonic="DS5OD" short-mnemonic="D5OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="36" describe="钻柱5内径" long-mnemonic="DS5ID" short-mnemonic="D5ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="37" describe="钻柱5接头内径" long-mnemonic="DS5JID" short-mnemonic="D5JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="38" describe="钻柱5接头外径" long-mnemonic="DS5JOD" short-mnemonic="D5JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="39" describe="钻柱5单位长度的质量" long-mnemonic="DS5MASS" short-mnemonic="D5MA" symbol="F" length="4" metric="LG/M" british="LB/F"/>
+      <item index="40" describe="钻柱5长度" long-mnemonic="DS5LEN" short-mnemonic="D5LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="41" describe="钻柱6外径" long-mnemonic="DS6OD" short-mnemonic="D6OD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="42" describe="钻柱6内径" long-mnemonic="DS6ID" short-mnemonic="D6ID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="43" describe="钻柱6接头内径" long-mnemonic="DS6JID" short-mnemonic="D6JI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="44" describe="钻柱6接头外径" long-mnemonic="DS6JOD" short-mnemonic="D6JO" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="45" describe="钻柱6单位长度的质量" long-mnemonic="DS6MASS" short-mnemonic="D6MA" symbol="F" length="4" metric="KG/M" british="LB/F"/>
+      <item index="46" describe="方钻杆内径" long-mnemonic="KELLYID" short-mnemonic="KID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="47" describe="方钻杆长度" long-mnemonic="KELLYOD" short-mnemonic="KOD" symbol="F" length="4" metric="M" british="F"/>
+      <item index="48" describe="钻杆立根长度" long-mnemonic="DPSTDLEN" short-mnemonic="SLEN" symbol="F" length="4" metric="M" british="F"/>
+      <item index="49" describe="接头/立柱号" long-mnemonic="DPSTDJINT" short-mnemonic="SJNT" symbol="S" length="2" metric="-" british="-"/>
+      <item index="50" describe="井段号" long-mnemonic="HOLELUN" short-mnemonic="HLNO" symbol="S" length="2" metric="-" british="-"/>
+      <item index="51" describe="第一段井眼直径" long-mnemonic="HL1DIAN" short-mnemonic="H1DI" symbol="F" length="4" metric="MM" british="F"/>
+      <item index="52" describe="第一段井眼长度" long-mnemonic="HL1LEN" short-mnemonic="H1LE" symbol="F" length="4" metric="N" british="F"/>
+      <item index="53" describe="第二段井眼直径" long-mnemonic="HL2DIAN" short-mnemonic="H2DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="54" describe="第二段井眼长度" long-mnemonic="HL2LEN" short-mnemonic="H2LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="55" describe="第三段井眼直径" long-mnemonic="HL3DIAN" short-mnemonic="H3DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="56" describe="第三段井眼长度" long-mnemonic="HL3HLEN" short-mnemonic="H3LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="57" describe="第四段井眼直径" long-mnemonic="HL4DIAN" short-mnemonic="H4DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="58" describe="第四段井眼长度" long-mnemonic="HL4HLEN" short-mnemonic="H4LE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="59" describe="第五段井眼直径" long-mnemonic="HL5DIAN" short-mnemonic="H5DI" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="60" describe="1号泵功率" long-mnemonic="PUMP1CAP" short-mnemonic="P1CA" symbol="F" length="4" metric="M3ST" british="B/ST"/>
+      <item index="61" describe="1号泵效率" long-mnemonic="PUMPEFF" short-mnemonic="P1EF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="62" describe="2号泵功率" long-mnemonic="PUMP2CAP" short-mnemonic="P2CA" symbol="F" length="4" metric="M3ST" british="B/ST"/>
+      <item index="63" describe="2号泵效率" long-mnemonic="PUMP2EFF" short-mnemonic="P2EF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="64" describe="3号泵功率" long-mnemonic="PUMP3CAP" short-mnemonic="P3CA" symbol="F" length="4" metric="M3ST" british="B/ST"/>
+      <item index="65" describe="3号泵效率" long-mnemonic="PUMP4EFF" short-mnemonic="P3EF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="66" describe="钻机作业成本" long-mnemonic="RIGCOST" short-mnemonic="RIGC" symbol="F" length="4" metric="-" british="$"/>
+      <item index="67" describe="起下钻速度" long-mnemonic="TRIPRATE" short-mnemonic="TRRP" symbol="F" length="4" metric="KPH" british="KF/H"/>
+      <item index="68" describe="压井管线内径" long-mnemonic="KILLID" short-mnemonic="KLID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="69" describe="压井管线接头内径" long-mnemonic="KILLJID" short-mnemonic="KLJD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="70" describe="压井管线接头系数" long-mnemonic="KILLJF" short-mnemonic="KLJF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="71" describe="压井管线长度" long-mnemonic="KILLLEN" short-mnemonic="KLLE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="72" describe="节流管线内径" long-mnemonic="CHKID" short-mnemonic="CHID" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="73" describe="节流管线接头内径" long-mnemonic="CHKOD" short-mnemonic="CHOD" symbol="F" length="4" metric="MM" british="IN"/>
+      <item index="74" describe="节流管线接头系数" long-mnemonic="CHKJF" short-mnemonic="CHJF" symbol="S" length="2" metric="%" british="%"/>
+      <item index="75" describe="节流管线长度" long-mnemonic="CHKLEN" short-mnemonic="CHLE" symbol="F" length="4" metric="M" british="F"/>
+      <item index="76" describe="套管鞋井深" long-mnemonic="DEPTCSGM" short-mnemonic="DCGM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="77" describe="套管鞋垂深井深" long-mnemonic="FEPTCSGV" short-mnemonic="DCGV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="78" describe="泥浆池夜面井深" long-mnemonic="DEPTPITM" short-mnemonic="DPTM" symbol="F" length="4" metric="M" british="F"/>
+      <item index="79" describe="泥浆液面垂深井深" long-mnemonic="DEPTPITV" short-mnemonic="DPTV" symbol="F" length="4" metric="M" british="F"/>
+      <item index="80" describe="破裂压力梯度" long-mnemonic="FPGPIT" short-mnemonic="FPIT" symbol="F" length="4" metric="KGM3" british="PPG"/>
+      <item index="81" describe="钻井承包商" long-mnemonic="DRLGCONT" short-mnemonic="CONT" symbol="A" length="16" metric="-" british="-"/>
+      <item index="82" describe="钻机名称" long-mnemonic="RIGNAME" short-mnemonic="RIG" symbol="A" length="16" metric="-" british="-"/>
+      <item index="83" describe="钻机类型" long-mnemonic="RIGTYPE" short-mnemonic="RTYP" symbol="A" length="16" metric="-" british="-"/>
+      <item index="84" describe="服务公司1" long-mnemonic="VENDOR1" short-mnemonic="VEN1" symbol="A" length="32" metric="-" british="-"/>
+      <item index="85" describe="服务公司2" long-mnemonic="VENDOR2" short-mnemonic="VEN2" symbol="A" length="32" metric="-" british="-"/>
+      <item index="86" describe="服务公司3" long-mnemonic="VENDOR3" short-mnemonic="VEN3" symbol="A" length="32" metric="-" british="-"/>
+      <item index="87" describe="服务公司4" long-mnemonic="VENDOR4" short-mnemonic="VEN4" symbol="A" length="32" metric="-" british="-"/>
+      <item index="88" describe="服务公司5" long-mnemonic="VENDOR5" short-mnemonic="VEN5" symbol="A" length="32" metric="-" british="-"/>
+      <item index="89" describe="服务公司6" long-mnemonic="VENDOR6" short-mnemonic="VEN6" symbol="A" length="32" metric="-" british="-"/>
+      <item index="90" describe="〈备用1〉" long-mnemonic="SPARE1" short-mnemonic="SPR1" symbol="F" length="4" metric="-" british="-"/>
+      <item index="91" describe="〈备用2〉" long-mnemonic="SPARE2" short-mnemonic="SPR2" symbol="F" length="4" metric="-" british="-"/>
+      <item index="92" describe="〈备用3〉" long-mnemonic="SPARE3" short-mnemonic="SPR3" symbol="F" length="4" metric="-" british="-"/>
+      <item index="93" describe="〈备用4〉" long-mnemonic="SPARE4" short-mnemonic="SPR4" symbol="F" length="4" metric="-" british="-"/>
+      <item index="94" describe="〈备用5〉" long-mnemonic="SPARE5" short-mnemonic="SPR5" symbol="F" length="4" metric="-" british="-"/>
+    </record>
+  </ACE>
 	<BakerHughes>
 		<record index="01" describe="以时间为基础的通用记录" type="151" auto="自动">
 		<item index="01" describe="井标识符" long-mnemonic="WELLID" short-mnemonic="WID" symbol="A" length="16" metric="-" british="-"/>

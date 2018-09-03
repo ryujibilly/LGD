@@ -6,6 +6,7 @@
       </wellcount>
       <wellcount name="青测试1-2">
       </wellcount>
+      <wellcount name="青1-3" />
     </well>
     <well name="青测试2">
       <wellcount name="青测试2-1">
@@ -29,10 +30,28 @@
     </well>
     <well name="青测试7">
       <wellcount name="青测试7-1" />
+      <wellcount name="青测试7-2" />
+      <wellcount name="青测试7-3" />
+      <wellcount name="青测试7-4" />
+      <wellcount name="青测试7-5" />
+      <wellcount name="青测试7-6" />
+      <wellcount name="青测试7-7" />
+      <wellcount name="青测试7-8" />
     </well>
     <well name="青测试8">
+      <wellcount name="青测试8-1" />
+      <wellcount name="青测试8-5" />
+      <wellcount name="青测试8-6" />
+      <wellcount name="青测试8-7" />
+      <wellcount name="青测试8-8" />
       <wellcount name="青测试8-9" />
       <wellcount name="青测试8-10" />
+    </well>
+    <well name="狮41H3-1-412">
+      <wellcount name="狮41H3-1-412" />
+    </well>
+    <well name="狮41H3-1">
+      <wellcount name="狮41H3-1-412" />
     </well>
   </workspace>
   <workspace name="长庆油田">
@@ -52,6 +71,8 @@
     </well>
   </workspace>
   <workspace name="吉林油田">
-    <well name="吉测试1" />
+    <well name="吉测试1">
+      <wellcount name="吉测试1-3" />
+    </well>
   </workspace>
 </well_workspace>

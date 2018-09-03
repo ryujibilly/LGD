@@ -42,9 +42,10 @@ namespace WebService
             //外网
             //this.Url = "http://113.200.64.43:2036/realdb/services/realdbservices";
             //内网
-            this.Url = "http://10.242.0.186/realdb/services/realdbservices";
+            //this.Url = "http://10.242.0.186/realdb/services/realdbservices";
             //后台测试  
             //this.Url = "http://10.242.104.54:8080/realdb/services/realdbservices?wsdl";
+            this.Url = "http://1.85.51.154:81/realdb/services/realdbservices";
         }
         public realdbservices(String url)
         {

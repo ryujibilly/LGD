@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <paths>
-  <path name="realDBPath" value="H:\Workspace\RealDB.db3">
+  <path name="realDBPath" value="E:\Workspace\RealDB.db3">
   </path>
-  <path name="rootPath" value="H:\Workspace">
+  <path name="rootPath" value="E:\Workspace">
   </path>
-  <path name="workspacePath" value="H:\Workspace\青海油田">
+  <path name="workspacePath" value="E:\Workspace\青海油田">
   </path>
-  <path name="wellPath" value="H:\Workspace\青海油田\青测试1">
+  <path name="wellPath" value="E:\Workspace\青海油田\青测试8">
   </path>
-  <path name="wellcountPath" value="H:\Workspace\青海油田\青测试1\青测试1-1">
+  <path name="wellcountPath" value="E:\Workspace\青海油田\青测试8\青测试8-10">
   </path>
 </paths>

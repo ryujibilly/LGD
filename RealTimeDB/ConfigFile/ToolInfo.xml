@@ -12,7 +12,7 @@
     <tool name="ACE"></tool>
     <tool name="CMS"></tool>
     <tool name="Shenkai"></tool>
-    <tool name="Shenkai2000"></tool>
+    <tool name="Shenkai2000C"></tool>
   </tools>
   <tools name="钻井">
     <tool name="Common"></tool>
